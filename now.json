@@ -1,0 +1,16 @@
+{
+  "name": "jab",
+  "version": 2,
+  "build": {
+    "env": {
+      "MONGODB_URI": "",
+      "CLOUDINARY_URL": "",
+      "DB_NAME": "",
+      "SENDGRID_API_KEY": "",
+      "EMAIL_FROM": "",
+      "WEB_URI": "",
+      "SESSION_SECRET": "",
+      "USING_SECRETS": ""
+    }
+  }
+}
