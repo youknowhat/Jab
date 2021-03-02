@@ -1,2 +1,1 @@
-# Jab
-This is side project platform Jab.
+Side project platform Jab.
