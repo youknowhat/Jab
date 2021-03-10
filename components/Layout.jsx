@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import GNB from './GNB';
 import KeyVisual from './KeyVisual';
-import ProjectCard from './ProjectCard';
+import ProjectList from './ProjectList';
 
 export default function Layout({ children }) {
   return (
@@ -31,10 +31,7 @@ export default function Layout({ children }) {
       <GNB />
       <main>
         <KeyVisual />
-        {children}
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        <ProjectList />
       </main>
       <footer></footer>
     </>

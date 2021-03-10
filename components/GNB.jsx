@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { useCurrentUser } from '@/hooks/index';
 
 export default function GNB() {
-  const [user, { mutate }] = useCurrentUser();
+  // const [user, { mutate }] = useCurrentUser();
 
-  const handleLogout = async () => {
-    await fetch('/api/auth', {
-      method: 'DELETE',
-    });
-    mutate(null);
-  };
+  // const handleLogout = async () => {
+  //   await fetch('/api/auth', {
+  //     method: 'DELETE',
+  //   });
+  //   mutate(null);
+  // };
 
   return (
     <Header
@@ -24,7 +24,7 @@ export default function GNB() {
         <Link href="/"><span style={{ color: "#fff" }}>Jab</span></Link>
       </Heading>
       <Nav direction="row" background="brand" pad="medium">
-        {!user ? (
+        {true ? (
           <>
             <Link href="/login">
               <Anchor icon={<Home />} hoverIndicator />
