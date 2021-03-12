@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Layout from '@/components/layout';
 import { Grommet } from 'grommet';
+import './styles/reset.css';
 
 export default function MyApp({ Component, pageProps }) {
   const theme = {
