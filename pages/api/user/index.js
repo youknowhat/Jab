@@ -50,10 +50,9 @@ handler.patch(upload.single('profilePicture'), async (req, res) => {
     profilePicture = image.secure_url;
   }
 
-  const { name, bio } = req.body;
+  const { name } = req.body;
   const user = await updateUserById(req.db, req.user._id, {
     ...(name && { name }),
-    ...(typeof bio === 'string' && { bio }),
     ...(profilePicture && { profilePicture }),
   });
 

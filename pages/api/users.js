@@ -30,7 +30,7 @@ handler.post(async (req, res) => {
 
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = await insertUser(req.db, {
-    email, password: hashedPassword, bio: '', name,
+    email, password: hashedPassword, name,
   });
 
   req.logIn(user, (err) => {
