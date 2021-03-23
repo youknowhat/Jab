@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Heading, Form, FormField, Button } from 'grommet';
 import Head from 'next/head';
+import Link from 'next/link';
 import Router from 'next/router';
 import { useCurrentUser } from '@/hooks/index';
 
@@ -25,7 +27,7 @@ const SignupPage = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
-    
+
     if (res.status === 201) {
       const userObj = await res.json();
       mutate(userObj);
@@ -39,37 +41,51 @@ const SignupPage = () => {
       <Head>
         <title>회원가입</title>
       </Head>
-      <div>
-        <h2>회원가입</h2>
-        <form onSubmit={handleSubmit}>
-          {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
-          <label htmlFor="name">
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="닉네임"
-            />
-          </label>
-          <label htmlFor="email">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="이메일"
-            />
-          </label>
-          <label htmlFor="password">
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="비밀번호"
-            />
-          </label>
-          <button type="submit">완료</button>
-        </form>
-      </div>
+      <Form
+        onSubmit={handleSubmit}
+        style={{ maxWidth: '600px', margin: '0 auto' }}
+      >
+        <Heading level="2" margin={{ vertical: '24px' }} fill>
+          회원가입
+        </Heading>
+        {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
+        <FormField
+          id="name"
+          type="text"
+          name="name"
+          label="닉네임"
+          required={true}
+        />
+        <FormField
+          id="email"
+          type="email"
+          name="email"
+          label="이메일"
+          required={true}
+          margin={{ top: '48px' }}
+        />
+        <FormField
+          id="password"
+          type="password"
+          name="password"
+          label="비밀번호"
+          required={true}
+          margin={{ top: '48px' }}
+        />
+        <Button
+          type="submit"
+          label="완료"
+          primary={true}
+          margin={{ top: '48px' }}
+          size="large"
+          fill
+        />
+        <Link href="/forget-password">
+          <a style={{ display: 'block', marginTop: '40px' }}>
+            비밀번호를 잊어버렸어요
+          </a>
+        </Link>
+      </Form>
     </>
   );
 };
