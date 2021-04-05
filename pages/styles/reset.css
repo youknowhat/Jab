@@ -1,102 +1,127 @@
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+li,
+div,
+span,
+input,
+button,
+textarea {
+  -webkit-appearance: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    line-height:1;
-}
-
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-    display:block;
-}
-
-nav ul {
-    list-style:none;
-}
-
-blockquote, q {
-    quotes:none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
+ul,
+ol,
+li {
+  list-style: none;
 }
 
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* change colours to suit your needs */
-ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
+input,
+button,
+textarea {
+  background: none;
 }
 
-/* change colours to suit your needs */
-mark {
-    background-color:#ff9;
-    color:#000;
-    font-style:italic;
-    font-weight:bold;
+html,
+body,
+input,
+button,
+textarea {
+  color: #212529;
+  font-family: roboto, 'Noto Sans KR', -apple-system, dotum, sans-serif;;
+  font-size: 14px;
 }
 
-del {
-    text-decoration: line-through;
+@font-face {
+  font-family: Roboto;
+  font-weight: 300;
+  font-style: normal;
+  src: local('Roboto Light'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Light.woff2') format('woff2'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Light.woff') format('woff'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Light.ttf') format('truetype');
 }
 
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Roboto'),
+    local('Roboto-Regular'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Regular.woff') format('woff'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
 }
 
-table {
-    border-collapse:collapse;
-    border-spacing:0;
+@font-face {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  src: local('Roboto Medium'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Medium.woff') format('woff'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Medium.ttf') format('truetype');
 }
 
-/* change border colour to suit your needs */
-hr {
-    display:block;
-    height:1px;
-    border:0;  
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+@font-face {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: normal;
+  src: local('Roboto Bold'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Bold.woff') format('woff'),
+    url('https://wadizcdn.net/assets/fonts/roboto/Roboto-Bold.ttf') format('truetype');
 }
 
-input, select {
-    vertical-align:middle;
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
+  font-style: normal;
+  src: url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Light.woff2') format('woff2'),
+    url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Light.woff') format('woff'),
+    url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Light.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Regular.woff2') format('woff2'),
+    url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Regular.woff') format('woff'),
+    url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 500;
+  font-style: normal;
+  src: url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Medium.woff2') format('woff2'),
+    url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Medium.woff') format('woff'),
+    url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Bold.woff2') format('woff2'),
+    url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Bold.woff') format('woff'),
+    url('https://wadizcdn.net/assets/fonts/notosans/NotoSansKR-Bold.otf') format('opentype');
+}
+
