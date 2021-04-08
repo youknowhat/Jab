@@ -22,19 +22,19 @@ const fadeOut = keyframes`
 
 const slideUp = keyframes`
   from {
-    transform: translateY(200px)
+    transform: translateY(200px);
   }
   to {
-    transform: translate(0);
+    transform: translateY(0px);
   }
 `;
 
 const slideDown = keyframes`
   from {
-    transform: translateY(0)
+    transform: translateY(0px);
   }
   to {
-    transform: translate(200px);
+    transform: translateY(200px);
   }
 `;
 
@@ -57,7 +57,7 @@ const DarkBackground = styled.div`
   ${(props) =>
     props.disappear &&
     css`
-        animation-name${fadeOut}  
+        animation-name: ${fadeOut};
       `}
 `;
 
@@ -76,14 +76,14 @@ const DialogBlock = styled.div`
 
   animation-duration: 0.25s;
   animation-timing-function: ease-out;
-  animation-name: ${slideUp}
+  animation-name: ${slideUp};
   animation-fill-mode: forwards;
 
   ${(props) =>
     props.disappear &&
     css`
-        animation-name${slideDown}  
-      `}
+      animation-name: ${slideDown};
+    `}
 `;
 
 const ButtonGroup = styled.div`
@@ -128,7 +128,7 @@ const Dialog = ({
           <ShortMarginButton color="gray" onClick={onCancel}>
             {cancelText}
           </ShortMarginButton>
-          <ShortMarginButton color="blue" onClick={onConfirm}>
+          <ShortMarginButton color="primary" onClick={onConfirm}>
             {confirmText}
           </ShortMarginButton>
         </ButtonGroup>

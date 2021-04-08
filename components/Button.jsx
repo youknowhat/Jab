@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { darken, lighten } from 'polished';
 
 const colorStyles = css`
-  /* 색상 */
   ${({ theme, color }) => {
     const selected = theme.palette[color];
 
@@ -73,7 +72,6 @@ const fullWidthStyles = css`
 `
 
 const StyledButton = styled.button`
-  /* 공통 스타일 */
   display: inline-flex;
   outline: none;
   border: none;
@@ -84,18 +82,13 @@ const StyledButton = styled.button`
   padding-left: 1rem;
   padding-right: 1rem;
 
-  /* 색상 */
   ${colorStyles}
-
-  /* 크기 */
   ${sizeStyles}
 
-  /* 기타 */
   &:not(:first-child) {
     margin-left: 1rem;
   }
 
-  /* 넓이 */
   ${fullWidthStyles}
 `;
 
@@ -115,7 +108,7 @@ const Button = ({ size, color, fullWidth, outline, children, ...rest }) => {
 }
 
 Button.defaultProps = {
-  color: 'blue',
+  color: 'gray',
   size: 'medium',
 }
 

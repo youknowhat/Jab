@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Heading, Form, FormField, Button } from 'grommet';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,7 +14,7 @@ const LoginPage = () => {
     if (user) router.push('/');
   }, [user]);
 
-  async function onSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const body = {
@@ -40,30 +41,44 @@ const LoginPage = () => {
       <Head>
         <title>로그인</title>
       </Head>
-      <h2>로그인</h2>
-      <form onSubmit={onSubmit}>
+      <Form
+        onSubmit={handleSubmit}
+        style={{ maxWidth: '600px', margin: '0 auto' }}
+      >
+        <Heading level="2" margin={{ vertical: '24px' }} fill>
+        로그인
+        </Heading>
         {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
-        <label htmlFor="email">
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Email address"
-          />
-        </label>
-        <label htmlFor="password">
-          <input
-            id="password"
-            type="password"
-            name="password"
-            placeholder="Password"
-          />
-        </label>
-        <button type="submit">로그인</button>
+        <FormField
+          id="email"
+          type="email"
+          name="email"
+          label="이메일"
+          required={true}
+          margin={{ top: '48px' }}
+        />
+        <FormField
+          id="password"
+          type="password"
+          name="password"
+          label="비밀번호"
+          required={true}
+          margin={{ top: '48px' }}
+        />
+        <Button
+          type="submit"
+          label="완료"
+          primary={true}
+          margin={{ top: '48px' }}
+          size="large"
+          fill
+        />
         <Link href="/forget-password">
-          <a>비밀번호를 잊어버렸어요</a>
+          <a style={{ display: 'block', marginTop: '40px' }}>
+            비밀번호를 잊어버렸어요
+          </a>
         </Link>
-      </form>
+      </Form>
     </>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Heading, Form, FormField, Button } from 'grommet';
 import Head from 'next/head';
-import Link from 'next/link';
 import Router from 'next/router';
 import { useCurrentUser } from '@/hooks/index';
+import Dialog from '../components/Dialog';
 
 const SignupPage = () => {
   const [user, { mutate }] = useCurrentUser();
@@ -13,8 +13,8 @@ const SignupPage = () => {
     if (user) Router.replace('/');
   }, [user]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
     const body = {
       email: e.currentTarget.email.value,
@@ -44,7 +44,7 @@ const SignupPage = () => {
       <Form
         onSubmit={handleSubmit}
         style={{ maxWidth: '600px', margin: '0 auto' }}
-      >
+      > 
         <Heading level="2" margin={{ vertical: '24px' }} fill>
           회원가입
         </Heading>
@@ -72,6 +72,14 @@ const SignupPage = () => {
           required={true}
           margin={{ top: '48px' }}
         />
+        <FormField
+          id="checkPassword"
+          type="password"
+          name="checkPassword"
+          label="비밀번호 확인"
+          required={true}
+          margin={{ top: '48px' }}
+        />
         <Button
           type="submit"
           label="완료"
@@ -80,11 +88,7 @@ const SignupPage = () => {
           size="large"
           fill
         />
-        <Link href="/forget-password">
-          <a style={{ display: 'block', marginTop: '40px' }}>
-            비밀번호를 잊어버렸어요
-          </a>
-        </Link>
+        <Dialog title="타이틀입니다" confirmText="화긴" cancelText="취소하기">다이얼로그만드는aasdf중</Dialog>
       </Form>
     </>
   );

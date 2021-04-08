@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import ProjectCard from './ProjectCard';
 
 const PROJECT_DATA = [
@@ -34,15 +35,15 @@ const PROJECT_DATA = [
   },
 ];
 
-const projectListStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(min(360px, 100%), 1fr))',
-  paddingBottom: '80px'
-};
+const ProjectListStyles = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+  padding-bottom: 80px;
+`
 
 const ProjectList = () => {
   return (
-    <div style={projectListStyle}>
+    <ProjectListStyles>
       {PROJECT_DATA.map(({ title, description, categorys }, index) => (
         <ProjectCard
           key={title + index}
@@ -51,7 +52,7 @@ const ProjectList = () => {
           categorys={categorys}
         />
       ))}
-    </div>
+    </ProjectListStyles>
   );
 };
 
