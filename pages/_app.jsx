@@ -6,10 +6,30 @@ import { ThemeProvider } from 'styled-components';
 import './styles/reset.css';
 
 export default function MyApp({ Component, pageProps }) {
+  const customTheme = {
+    global: {
+      input: {
+        font: {
+          weight: '400',
+        },
+      },
+    },
+    formField: {
+      label: {
+        margin: '16px 0',
+        font: {
+          weight: '600',
+        },
+      },
+      margin: {
+        top: '48px'
+      },
+    },
+  };
   return (
     <Layout>
       <Meta />
-      <Grommet>
+      <Grommet theme={customTheme}>
         <ThemeProvider
           theme={{
             palette: {
