@@ -8,7 +8,6 @@ import {
   RadioButtonGroup,
   Select,
   TextArea,
-  Grommet,
   ResponsiveContext,
 } from 'grommet';
 import Head from 'next/head';
@@ -57,7 +56,7 @@ function Edit() {
               이런 걸 해보려고 해요
             </Heading>
 
-            <FormField label="참여 가능 여부" margin={{ top: '48px' }}>
+            <FormField label="참여 가능 여부">
               <RadioButtonGroup
                 name="attend"
                 options={['가능', '대기', '불가']}
@@ -65,59 +64,21 @@ function Edit() {
             </FormField>
 
             <FormField
-              id="nickname"
-              type="text"
-              name="nickname"
-              label="닉네임"
-              placeholder="ex) 열정맨"
-              required={true}
-            />
-
-            <FormField
-              id="summary"
               name="summary"
               label="프로젝트 요약"
               placeholder="프로젝트를 간단히 요약해서 알려주세요."
-              required={true}
             />
 
             <FormField
-              id="description"
               name="description"
               label="프로젝트 설명"
-              required={true}
             >
               <TextArea placeholder="프로젝트를 상세히 설명해주세요." />
             </FormField>
 
             <FormField
-              id="projectType"
-              name="projectType"
-              label="프로젝트 타입"
-              required={true}
-              margin={{ top: '48px' }}
-            >
-              <CheckBoxGroup options={['프로젝트', '스터디']} />
-            </FormField>
-
-            <FormField
-              id="skill"
-              name="skill"
-              label="필요한 스킬"
-              required={true}
-              margin={{ top: '48px' }}
-            >
-              <CheckBoxGroup
-                options={['기획', '개발', '마케팅', '디자인', '기타']}
-              />
-            </FormField>
-
-            <FormField
-              id="status"
               name="status"
               label="프로젝트 진행 상태"
-              required={true}
-              margin={{ top: '48px' }}
             >
               <Select
                 options={['시작 전', '초반', '중반', '완료']}
@@ -126,29 +87,31 @@ function Edit() {
             </FormField>
 
             <FormField
-              id="experience"
-              name="experience"
-              label="관련 경험"
-              margin={{ top: '48px' }}
+              name="projectType"
+              label="프로젝트 타입"
             >
-              <TextArea placeholder="관련된 경험이 있다면 알려주세요." />
+              <CheckBoxGroup options={['프로젝트', '스터디']} />
             </FormField>
 
             <FormField
-              id="contact"
+              name="skill"
+              label="필요한 스킬"
+            >
+              <CheckBoxGroup
+                options={['기획', '개발', '마케팅', '디자인', '기타']}
+              />
+            </FormField>
+
+            <FormField
               name="contact"
               label="참여 연락 수단"
-              required={true}
-              margin={{ top: '48px' }}
             >
               <TextArea placeholder="프로젝트에 참여하기 위한 연락 수단을 알려주세요. (ex.이메일)" />
             </FormField>
 
             <FormField
-              id="reference"
               name="reference"
               label="참고 링크"
-              margin={{ top: '48px' }}
             >
               <TextArea placeholder="프로젝트에 참여 전 참고할만한 링크를 알려주세요. (ex.나의 프로필, 진행중인 프로젝트 링크 등)" />
             </FormField>
@@ -156,9 +119,9 @@ function Edit() {
             <Button
               type="submit"
               label="완료"
-              primary={true}
-              margin={{ top: '48px' }}
               size="large"
+              margin="40px 0 0"
+              primary
               fill
             />
           </Form>

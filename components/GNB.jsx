@@ -1,37 +1,35 @@
 import React from 'react';
-import { Header, Button, Heading, Nav, Anchor } from 'grommet';
-import { Notification, Home, ChatOption } from 'grommet-icons';
+import { Header, Heading, Nav } from 'grommet';
 import Link from 'next/link';
 
 export default function GNB() {
   return (
-    <Header
-      pad='0 16px 0 24px'
-      background='brand'
-    >
+    <Header pad="8px 16px 8px 16px" background="brand">
       <Heading level="1" margin="none" size="36px">
-        <Link href="/"><a href="/" style={{ color: "#fff", fontSize: '36px' }}>Jab</a></Link>
+        <Link href="/">
+          <a href="/" style={{ color: '#fff', fontSize: '36px' }}>
+            Jab
+          </a>
+        </Link>
       </Heading>
       <Nav direction="row" background="brand" pad="12px 0">
         {true ? (
           <>
             <Link href="/login">
-              <Anchor icon={<Home />} hoverIndicator />
+              <a href="/login">로그인</a>
             </Link>
             <Link href="/signup">
-              <Anchor icon={<Notification />} hoverIndicator />
+              <a href="/signup" style={{ marginLeft: '16px' }}>회원가입</a>
             </Link>
           </>
         ) : (
           <>
             <Link href={`/user/${user._id}`}>
-              <Anchor icon={<ChatOption />} hoverIndicator />
+              <a href={`/user/${user._id}`}>프로필</a>
             </Link>
-            <Button
-              icon={<Notification />}
-              onClick={handleLogout}
-              label="Logout"
-            />
+            <button onClick={handleLogout} style={{ marginLeft: '16px' }}>
+              로그아웃
+            </button>
           </>
         )}
       </Nav>

@@ -50,27 +50,21 @@ const LoginPage = () => {
         </Heading>
         {errorMsg ? <p style={{ color: 'red' }}>{errorMsg}</p> : null}
         <FormField
-          id="email"
           type="email"
           name="email"
           label="이메일"
-          required={true}
-          margin={{ top: '48px' }}
         />
         <FormField
-          id="password"
           type="password"
           name="password"
           label="비밀번호"
-          required={true}
-          margin={{ top: '48px' }}
         />
         <Button
           type="submit"
           label="완료"
-          primary={true}
           margin={{ top: '48px' }}
           size="large"
+          primary
           fill
         />
         <Link href="/forget-password">
